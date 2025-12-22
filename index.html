@@ -2,8 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- MUST -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JA Stats | Statistical Analysis</title>
+
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="Assets/ja-stat-support-logo.png">
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -11,14 +14,14 @@
   <!-- Poppins Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <!-- Bootstrap Icons for optional icons -->
+  <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
+  <script src="transition.js"></script>
 
   <style>
-    /* BODY */
     body {
       font-family: 'Poppins', sans-serif;
       background-color: #f4f6f9;
@@ -33,12 +36,21 @@
       -webkit-backdrop-filter: blur(12px);
       box-shadow: 0 8px 32px rgba(0,0,0,0.1);
     }
-    .navbar-brand, .nav-link {
+
+    .navbar-brand,
+    .nav-link {
       color: #000 !important;
       font-weight: 500;
     }
+
     .nav-link.active {
       border-bottom: 2px solid #0d6efd;
+    }
+
+    /* BRAND LOGO */
+    .brand-logo {
+      height: 36px;
+      width: auto;
     }
 
     /* HERO SECTION */
@@ -49,8 +61,7 @@
       justify-content: center;
       text-align: center;
       padding: 2rem 1rem;
-      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-                  url("https://images.unsplash.com/photo-1529070538774-1843cb3265df");
+      background-image: linear-gradient(to top, #3f51b1 0%, #5a55ae 13%, #7b5fac 25%, #8f6aae 38%, #a86aa4 50%, #cc6b8e 62%, #f18271 75%, #f3a469 87%, #f7c978 100%);
       background-size: cover;
       background-position: center;
       color: #fff;
@@ -82,38 +93,67 @@
       transform: translateY(-2px);
     }
 
-    /* ABOUT SECTION */
     .about-section {
       padding: 4rem 1rem;
       text-align: center;
     }
 
-    /* MEDIA QUERIES */
-    @media (max-width: 992px) {
-      .hero h1 { font-size: 2.5rem; }
-    }
     @media (max-width: 768px) {
-      .hero { min-height: 60vh; padding: 2rem; }
       .hero h1 { font-size: 2rem; }
-      .hero p { font-size: 1rem; }
     }
-    @media (max-width: 576px) {
-      .hero { min-height: 50vh; padding: 1.5rem; }
-      .hero h1 { font-size: 1.5rem; }
-      .hero p { font-size: 0.95rem; }
-      .btn-light { font-size: 0.95rem; padding: 0.6rem 1rem; }
-    }
+    .brand-logo {
+  height: 36px;
+  width: 36px;
+  object-fit: cover;
+  border-radius: 50%;   /* MAKES IT ROUND */
+}
+.hero-image {
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .hero-image {
+    width: 260px;
+    height: 260px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .hero-image {
+    width: 200px;
+    height: 200px;
+    margin-top: 1rem;
+  }
+}
+
+
   </style>
 </head>
+
 <body>
 
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg fixed-top glass-nav">
   <div class="container">
-    <a class="navbar-brand fw-semibold" href="index.html">JA Stats Support</a>
+
+    <!-- BRAND WITH LOGO -->
+    <a class="navbar-brand fw-semibold d-flex align-items-center gap-2" href="index.html">
+      <img src="Assets\ja stat support logo.png"
+           alt="JA Stats Support Logo"
+           class="brand-logo">
+      <span>JA Stats Support</span>
+    </a>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navMenu">
       <ul class="navbar-nav ms-auto gap-3">
         <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
@@ -123,24 +163,44 @@
         <li class="nav-item"><a class="nav-link" href="pages/contact.html">Contact</a></li>
       </ul>
     </div>
+
   </div>
 </nav>
 
+<!-- HERO -->
 <!-- HERO SECTION -->
 <section class="hero">
   <div class="container">
-    <h1>Statistical Analysis for Thesis Papers</h1>
-    <p class="mt-2">
-      Professional, accurate, and research-driven statistical services
-      for undergraduate and graduate research.
-    </p>
-    <a href="pages/contact.html" class="btn btn-light mt-3 px-4">
-      <i class="bi bi-envelope-fill"></i> Reach Out
-    </a>
+    <div class="row align-items-center gy-4">
+
+      <!-- TEXT -->
+      <div class="col-lg-6 text-lg-start text-center">
+        <h1>Statistical Analysis for Thesis Papers</h1>
+        <p class="mt-3">
+          Professional, accurate, and research-driven statistical services
+          for undergraduate and graduate research.
+        </p>
+
+        <a href="pages/contact.html" class="btn btn-light mt-3 px-4">
+          <i class="bi bi-envelope-fill"></i> Reach Out
+        </a>
+      </div>
+
+      <!-- IMAGE -->
+      <div class="col-lg-6 text-center">
+        <img 
+          src="Assets\ja stat support logo.png"
+          alt="Statistical Research"
+          class="img-fluid hero-image"
+        >
+      </div>
+
+    </div>
   </div>
 </section>
 
-<!-- ABOUT SECTION -->
+
+<!-- ABOUT -->
 <section class="about-section container">
   <h2>What We Do</h2>
   <p class="mt-2">
