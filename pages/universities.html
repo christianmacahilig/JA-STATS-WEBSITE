@@ -23,9 +23,18 @@
 
     /* NAVBAR */
     .glass-nav {
-      background: rgba(255,255,255,0.15);
+      background: rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    .brand-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 10px;
+      border: 2px solid rgba(255,255,255,0.6);
     }
 
     .nav-link, .navbar-brand {
@@ -78,7 +87,10 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg fixed-top glass-nav">
   <div class="container">
-    <a class="navbar-brand fw-semibold" href="../index.html">JA Stats</a>
+    <a class="navbar-brand d-flex align-items-center fw-semibold text-white" href="../index.html">
+      <img src="../Assets/ja stat support logo.png" alt="JA Stats Logo" class="brand-logo">
+      JA Stats
+    </a>
 
     <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
       <span class="navbar-toggler-icon"></span>
