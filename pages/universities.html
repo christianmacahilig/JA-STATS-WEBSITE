@@ -6,28 +6,36 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <script src="../transition.js"></script>
-  <link rel="icon" class= "favicon" type="image/png" href="..\Assets\ja stat support logo.png">
+
+  <link rel="icon" type="image/png" href="../Assets/ja stat support logo.png">
+
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background-image: linear-gradient(to top, #3f51b1 0%, #5a55ae 13%, #7b5fac 25%, #8f6aae 38%, #a86aa4 50%, #cc6b8e 62%, #f18271 75%, #f3a469 87%, #f7c978 100%);
+      background-image: linear-gradient(
+        to top,
+        #3f51b1 0%,
+        #5a55ae 13%,
+        #7b5fac 25%,
+        #8f6aae 38%,
+        #a86aa4 50%,
+        #cc6b8e 62%,
+        #f18271 75%,
+        #f3a469 87%,
+        #f7c978 100%
+      );
       color: #fff;
       min-height: 100vh;
     }
 
-    /* NAVBAR */
     .glass-nav {
       background: rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255,255,255,0.2);
     }
+
     .brand-logo {
       width: 36px;
       height: 36px;
@@ -46,7 +54,6 @@
       border-bottom: 2px solid #0d6efd;
     }
 
-    /* CARDS */
     .glass-card {
       background: rgba(255,255,255,0.12);
       backdrop-filter: blur(14px);
@@ -54,7 +61,6 @@
       border: 1px solid rgba(255,255,255,0.25);
       box-shadow: 0 8px 32px rgba(0,0,0,0.25);
       padding: 1.5rem;
-      text-align: center;
       cursor: pointer;
       transition: transform 0.3s ease;
     }
@@ -69,7 +75,24 @@
       font-weight: 700;
     }
 
-    /* MODAL */
+    /* UNIVERSITY ITEM */
+    .univ-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-weight: 500;
+      text-align: left;
+    }
+
+    .univ-logo {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      background: transparent;
+      border-radius: 0;
+      padding: 0;
+    }
+
     .modal-content {
       background: rgba(30,30,30,0.95);
       color: #fff;
@@ -84,11 +107,10 @@
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg fixed-top glass-nav">
   <div class="container">
-    <a class="navbar-brand d-flex align-items-center fw-semibold text-white" href="../index.html">
-      <img src="../Assets/ja stat support logo.png" alt="JA Stats Logo" class="brand-logo">
+    <a class="navbar-brand d-flex align-items-center fw-semibold" href="../index.html">
+      <img src="../Assets/ja stat support logo.png" class="brand-logo">
       JA Stats
     </a>
 
@@ -108,45 +130,49 @@
   </div>
 </nav>
 
-<!-- CONTENT -->
 <div class="container pt-5 mt-5">
   <h2 class="mb-4">Universities & Proofs</h2>
 
   <div class="row g-4">
 
-    <!-- UNIVERSITY LIST -->
     <div class="col-md-4">
-      <div class="glass-card" data-bs-toggle="modal" data-bs-target="#proofModal">
+      <div class="glass-card univ-item" data-bs-toggle="modal" data-bs-target="#proofModal">
+        <img src="../Assets/cvsu.png" class="univ-logo">
         Cavite State University
       </div>
     </div>
 
     <div class="col-md-4">
-      <div class="glass-card" data-bs-toggle="modal" data-bs-target="#proofModal">
-        Bicol State University
+      <div class="glass-card univ-item" data-bs-toggle="modal" data-bs-target="#proofModal">
+        <img src="../Assets/tdlc.png" class="univ-logo">
+        Tomas Del Rosario College
       </div>
     </div>
 
     <div class="col-md-4">
-      <div class="glass-card" data-bs-toggle="modal" data-bs-target="#proofModal">
+      <div class="glass-card univ-item" data-bs-toggle="modal" data-bs-target="#proofModal">
+        <img src="../Assets/rtu.png" class="univ-logo">
         Rizal Technological University
       </div>
     </div>
 
     <div class="col-md-4">
-      <div class="glass-card" data-bs-toggle="modal" data-bs-target="#proofModal">
+      <div class="glass-card univ-item" data-bs-toggle="modal" data-bs-target="#proofModal">
+        <img src="../Assets/tup.png" class="univ-logo">
         Technological University of the Philippines
       </div>
     </div>
 
     <div class="col-md-4">
-      <div class="glass-card" data-bs-toggle="modal" data-bs-target="#proofModal">
+      <div class="glass-card univ-item" data-bs-toggle="modal" data-bs-target="#proofModal">
+        <img src="../Assets/olfo.png" class="univ-logo">
         Our Lady of Fatima University
       </div>
     </div>
 
     <div class="col-md-4">
-      <div class="glass-card" data-bs-toggle="modal" data-bs-target="#proofModal">
+      <div class="glass-card univ-item" data-bs-toggle="modal" data-bs-target="#proofModal">
+        <img src="../Assets/sti.png" class="univ-logo">
         STI College
       </div>
     </div>
@@ -154,7 +180,6 @@
   </div>
 </div>
 
-<!-- MODAL -->
 <div class="modal fade" id="proofModal" tabindex="-1">
   <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content p-3">
@@ -165,25 +190,16 @@
 
       <div class="modal-body">
         <div class="row g-3">
-          <div class="col-md-6">
-            <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f" class="proof-img">
-          </div>
-          <div class="col-md-6">
-            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b" class="proof-img">
-          </div>
-          <div class="col-md-6">
-            <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a" class="proof-img">
-          </div>
-          <div class="col-md-6">
-            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1" class="proof-img">
-          </div>
+          <div class="col-md-6"><img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f" class="proof-img"></div>
+          <div class="col-md-6"><img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b" class="proof-img"></div>
+          <div class="col-md-6"><img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a" class="proof-img"></div>
+          <div class="col-md-6"><img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1" class="proof-img"></div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
